@@ -19,7 +19,7 @@ jobs:
           terraform_version: 1.9.5
 
       - name: Change directory to Terraform
-        run: cd /Terraform
+        run: cd Terraform
 
       - name: Initialize Terraform
         working-directory: ./Terraform  # Add this line to specify the terraform folder
