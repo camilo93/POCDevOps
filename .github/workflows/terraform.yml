@@ -19,14 +19,14 @@ jobs:
           terraform_version: 1.9.5
 
       - name: Change directory to Terraform
-        run: cd Terraform
+        run: cd /Terraform
 
       - name: Initialize Terraform
-        working-directory: /Terraform  # Add this line to specify the terraform folder
+        working-directory: ./Terraform  # Add this line to specify the terraform folder
         run: terraform init
 
       - name: Terraform Plan
-        working-directory: /Terraform  # Add this line to specify the terraform folder
+        working-directory: ./Terraform  # Add this line to specify the terraform folder
         run: terraform plan
         env:
           ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
@@ -36,7 +36,7 @@ jobs:
 
       - name: Apply Terraform
         if: github.ref == 'refs/heads/main'
-        working-directory: /Terraform  # Add this line to specify the terraform folder
+        working-directory: ./Terraform  # Add this line to specify the terraform folder
         run: terraform apply -auto-approve
         env:
           ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
