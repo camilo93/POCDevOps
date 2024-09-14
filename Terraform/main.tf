@@ -4,7 +4,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "example" {
   name     = "example-resources"
-  location = "East US 2"
+  location = "Brazil South"
 }
 
 resource "azurerm_virtual_network" "example" {
@@ -51,7 +51,7 @@ resource "azurerm_linux_virtual_machine" "example" {
   source_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
-    sku       = "22.04-LTS"
+    sku       = "24.04-LTS"
     version   = "latest"
   }
 
